@@ -26,9 +26,10 @@ pipeline {
 					agent { label 'principal' }
                     steps {
 						script {
-							node('principal') {
-								sh "./script1.sh ${params.NAME1}"
-                            }
+							// Aquí va el comando que quieres ejecutar directamente en el agente 'principal'
+                            sh """
+                                echo "Hola, ${params.NAME1}! Este es el script 1 en el agente principal"
+                            """
                         }
                     }
                 }
@@ -36,9 +37,10 @@ pipeline {
 					agent { label '2' }
                     steps {
 						script {
-							node('2') {
-								sh "./script2.sh ${params.NAME2}"
-                            }
+							// Aquí va el comando que quieres ejecutar directamente en el agente '2'
+                            sh """
+                                echo "Hola, ${params.NAME2}! Este es el script 2 en el agente 2"
+                            """
                         }
                     }
                 }
@@ -46,9 +48,10 @@ pipeline {
 					agent { label '3' }
                     steps {
 						script {
-							node('3') {
-								sh "./script3.sh ${params.NAME3}"
-                            }
+							// Aquí va el comando que quieres ejecutar directamente en el agente '3'
+                            sh """
+                                echo "Hola, ${params.NAME3}! Este es el script 3 en el agente 3"
+                            """
                         }
                     }
                 }
@@ -56,9 +59,10 @@ pipeline {
 					agent { label '4' }
                     steps {
 						script {
-							node('4') {
-								sh "./script4.sh ${params.NAME4}"
-                            }
+							// Aquí va el comando que quieres ejecutar directamente en el agente '4'
+                            sh """
+                                echo "Hola, ${params.NAME4}! Este es el script 4 en el agente 4"
+                            """
                         }
                     }
                 }
@@ -66,9 +70,10 @@ pipeline {
 					agent { label '5' }
                     steps {
 						script {
-							node('5') {
-								sh "./script5.sh ${params.NAME5}"
-                            }
+							// Aquí va el comando que quieres ejecutar directamente en el agente '5'
+                            sh """
+                                echo "Hola, ${params.NAME5}! Este es el script 5 en el agente 5"
+                            """
                         }
                     }
                 }
