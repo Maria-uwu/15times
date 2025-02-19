@@ -7,7 +7,8 @@ pipeline {
         string(name: 'NAME4', defaultValue: 'David', description: 'Cuarto nombre')
         string(name: 'NAME5', defaultValue: 'Eve', description: 'Quinto nombre')
     }
-    cleanWs()
+    sh 'rm -rf *'
+
 
     stages {
 		stage('Parallel Execution') {
