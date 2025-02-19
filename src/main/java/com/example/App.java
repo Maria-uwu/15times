@@ -18,6 +18,15 @@ public class App {
 
         for (int i = 1; i <= 15; i++) {
             final int index = i;
+
+            // Espera aleatoria ANTES de agregar la tarea al executor
+            int initialWaitTime = random.nextInt(5) + 1; // 1 a 5 segundos
+            try {
+                Thread.sleep(initialWaitTime * 1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             executor.submit(() -> {
                 try {
                     int waitTime = random.nextInt(5) + 1; // Entre 1 y 5 segundos
