@@ -5,6 +5,10 @@ pipeline {
 		string(name: 'NAME', defaultValue: 'DefaultName', description: 'Name to print')
     }
 
+    tools {
+		maven 'Maven 3'
+}
+
     stages {
 		stage('Build') {
 			steps {

@@ -4,7 +4,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.miempresa</groupId>
+  <groupId>com.example</groupId>
   <artifactId>15times</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
