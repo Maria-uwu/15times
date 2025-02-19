@@ -26,7 +26,7 @@ pipeline {
                     for (int i = 1; i <= 5; i++) { // Crea 5 procesos en paralelo
                         def instance = i
                         tasks["Task ${instance}"] = {
-						sh "java -cp target/15times-1.0-SNAPSHOT.jar com.miempresa.ParallelPrinter ${params.NAME}"
+						sh "java -cp target/15times-1.0-SNAPSHOT.jar com.example.App ${params.NAME}"
                         }
                     }
 
