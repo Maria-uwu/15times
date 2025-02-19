@@ -7,7 +7,7 @@ pipeline {
 
     tools {
 		maven 'Maven 3'
-}
+    }
 
     stages {
 		stage('Build') {
@@ -18,19 +18,10 @@ pipeline {
             }
         }
 
-        stage('Parallel Execution') {
+        stage('Execution') {  // Sin paralelismo aquí
 			steps {
-				script {
-					def tasks = [:]
-
-                    for (int i = 1; i <= 5; i++) { // Crea 5 procesos en paralelo
-                        def instance = i
-                        tasks["Task ${instance}"] = {
-						sh "java -cp target/15times-1.0-SNAPSHOT.jar com.example.App ${params.NAME}"
-                        }
-                    }
-
-                    parallel tasks
+			script {
+				sh "java -cp target/15times-1.0-SNAPSHOT.jar com.example.App ${params.NAME}"
                 }
             }
         }
