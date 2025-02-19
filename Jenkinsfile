@@ -7,10 +7,16 @@ pipeline {
         string(name: 'NAME4', defaultValue: 'David', description: 'Cuarto nombre')
         string(name: 'NAME5', defaultValue: 'Eve', description: 'Quinto nombre')
     }
-    sh 'rm -rf *'
-
 
     stages {
+		stage('Clean Workspace') {
+			steps {
+				script {
+					// Elimina los archivos en el directorio actual
+                    sh 'rm -rf *'
+                }
+            }
+        }
 		stage('Parallel Execution') {
 			parallel {
 				stage('principal') {
